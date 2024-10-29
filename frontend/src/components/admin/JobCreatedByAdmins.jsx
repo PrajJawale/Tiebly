@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Button } from '../ui/button'
 import { useNavigate } from 'react-router-dom'
-import AdminJobsTable from './adminJobsTable'
+
 import { Input } from '../ui/input'
 import useGetAllJobsByAdmin from '@/hooks/useGetAllJobsByAdmin'
 import { setSerchJobByText } from '@/redux/jobSlice'
 import { useDispatch } from 'react-redux'
 import { ArrowLeft } from 'lucide-react'
+import AdminJobsTable from './AdminJobsTable'
 
 function JobCreatedByAdmins() {
   const navigate = useNavigate()
@@ -31,7 +32,7 @@ function JobCreatedByAdmins() {
       </div>
 
       <div>
-        <AdminJobsTable />
+        <AdminJobsTable/>
       </div>
     </div>
   )
