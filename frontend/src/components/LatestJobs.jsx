@@ -1,23 +1,31 @@
 import React from 'react'
 import LatestJobCard from './LatestJobCard'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 function LatestJobs() {
-    const { allJobs } = useSelector(store => store.job)
+    const navigate = useNavigate();
+    const { allJobs } = useSelector(store => store.job);
+
     return (
-        <div className='max-w-7xl mx-auto my-20 items-center'>
-            <h1 className='text-4xl font-bold'> Latest Job Openings</h1>
-            {/* multiple job card display here  */}
-            <div className='grid grid-cols-3 gap-4 my-5 '>
+        <div className='max-w-7xl items-center m-10 '>
+            <h1 className='text-4xl font-bold'>Latest Job Openings</h1>
+            {/* Multiple job cards displayed here */}
+            <div className='grid grid-cols-3 gap-4 my-5'>
                 {
                     allJobs.map((job) => (
-                        <LatestJobCard  key={job._id} job={job}/>
+                        <LatestJobCard 
+                            onClick = {()=>(navigate(`/description/${job._id}`))} // Ensure leading slash
+                            key={job._id} 
+                            job={job}
+                            className="cursor-pointer" // Optional: Add for hover effect
+                        />
+                        
                     ))
                 }
             </div>
-
         </div>
     )
 }
 
-export default LatestJobs
+export default LatestJobs;

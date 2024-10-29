@@ -3,7 +3,7 @@ import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from '
 import { Label } from './ui/label'
 import { Input } from './ui/input'
 import { Button } from './ui/button'
-import { Loader2 } from 'lucide-react'
+import { Loader2, X } from 'lucide-react'  // Import X for cross icon
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import { USER_API_END_POINT } from './constant.js'
@@ -30,7 +30,7 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
 
     const fileChangeHandler = (e) => {
         const file = e.target.files?.[0];
-        setInput({ ...input, file })
+        setInput({ ...input, file });
     }
 
     const submitHandler = async (e) => {
@@ -57,16 +57,13 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
                 toast.success(res.data.message);
             }
         } catch (error) {
-            console.log(error);
+            console.error(error);
             toast.error(error.response.data.message);
-        } finally{
+        } finally {
             setLoading(false);
         }
         setOpen(false);
-        console.log(input);
     }
-
-
 
     return (
         <div>
@@ -74,6 +71,9 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
                 <DialogContent className="sm:max-w-[425px]" onInteractOutside={() => setOpen(false)}>
                     <DialogHeader>
                         <DialogTitle>Update Profile</DialogTitle>
+                        <button onClick={() => setOpen(false)} className="absolute top-4 right-4">
+                            <X className="w-5 h-5 text-gray-500" />
+                        </button>
                     </DialogHeader>
                     <form onSubmit={submitHandler}>
                         <div className='grid gap-4 py-4'>
@@ -143,7 +143,13 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
                         </div>
                         <DialogFooter>
                             {
-                                loading ? <Button className="w-full my-4"> <Loader2 className='mr-2 h-4 w-4 animate-spin' /> Please wait </Button> : <Button type="submit" className="w-full my-4">Update</Button>
+                                loading ? (
+                                    <Button className="w-full my-4">
+                                        <Loader2 className='mr-2 h-4 w-4 animate-spin' /> Please wait
+                                    </Button>
+                                ) : (
+                                    <Button type="submit" className="w-full my-4">Update</Button>
+                                )
                             }
                         </DialogFooter>
                     </form>
@@ -153,4 +159,4 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
     )
 }
 
-export default UpdateProfileDialog
+export default UpdateProfileDialog;
