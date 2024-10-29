@@ -10,8 +10,8 @@ function Job({job}) {
     const daysAgoFunction = (mongodbTime)=>{
         const createdAt = new Date(mongodbTime)
         const currTime = new Date()
-        const timeDiff = createdAt - currTime
-        return Math.floor(timeDiff)*(1000*24*60*60)
+        const timeDiff = currTime - createdAt
+        return Math.floor((timeDiff)/(1000*24*60*60))
     }
   return (
     <div className='p-5 rounded-md shadow-xl bg-white border border-gray-100'>
@@ -20,7 +20,7 @@ function Job({job}) {
                 <Button variant="outline" className="rounded-full" size="icon"><Bookmark /></Button>
             </div>
 
-            <div className='flex items-center gap-2 my-2'>
+            <div className='flex items-center gap-5 my-2'>
                 <Button className="p-6" variant="outline" size="icon">
                     <Avatar>
                         <AvatarImage src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOo6QUm_jVtraBc_hltQIeZMq4m_Wv8uTFcg&s" />

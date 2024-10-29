@@ -21,7 +21,7 @@ app.use(cookieParser());
 // CORS configuration
 const corsOptions = {
     origin: 'https://tiebly.onrender.com',  // Frontend origin
-    // origin:'http://localhost/8000',
+    // origin:'http://localhost/5173',
     credentials: true,                // Enable credentials like cookies
     methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Allowed methods
     allowedHeaders: ['Content-Type', 'Authorization'],  // Allowed headers

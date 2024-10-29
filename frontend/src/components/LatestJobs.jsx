@@ -14,12 +14,14 @@ function LatestJobs() {
             <div className='grid grid-cols-3 gap-4 my-5'>
                 {
                     allJobs.map((job) => (
-                        <LatestJobCard 
-                            onClick = {()=>(navigate(`/description/${job._id}`))} // Ensure leading slash
+                       <div onClick={()=>navigate(`/description/${job._id}`)}>
+                           <LatestJobCard 
+                           // Ensure leading slash
                             key={job._id} 
                             job={job}
                             className="cursor-pointer" // Optional: Add for hover effect
                         />
+                       </div>
                         
                     ))
                 }
