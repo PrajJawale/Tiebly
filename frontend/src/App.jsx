@@ -10,9 +10,9 @@ import Description from './components/Description'
 import Companies from './components/admin/Companies'
 import CreateCompany from './components/admin/CreateCompany'
 import CreateCompanySetup from './components/admin/CreateCompanySetup'
-import JobCreatedByAdmins from './components/admin/jobCreatedByAdmins'
 import JobApplicant from './components/admin/JobApplicant'
 import PostJob from './components/admin/PostJob'
+import JobCreatedByAdmins from './components/admin/JobCreatedByAdmins'
 
 const appRouter = createBrowserRouter([
   {
