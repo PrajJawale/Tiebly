@@ -149,7 +149,7 @@ function SignUp() {
                         </div>
                     </RadioGroup>
                     <div>
-                        <Label>Profile</Label>
+                        <Label>Upload Profile Photo</Label>
                         <Input
                             accept="image/*"
                             type="file"
