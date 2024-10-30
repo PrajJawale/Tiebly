@@ -63,6 +63,7 @@ function Login() {
                         onChange={changeEventHandler}
                         placeholder="praj@gmail.com"
                         autoComplete="email"  // Added autocomplete attribute for email
+                        required
                     />
                 </div>
                 <div>

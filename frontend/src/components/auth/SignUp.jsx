@@ -78,6 +78,7 @@ function SignUp() {
                     <Input
                         type="text"
                         name="fullname"
+                        required
                         value={input.fullname}
                         onChange={changeEventHandler}
                         placeholder="Enter the Full Name"
@@ -93,6 +94,7 @@ function SignUp() {
                         onChange={changeEventHandler}
                         placeholder="praj@gmail.com"
                         autoComplete="email"
+                        required
                     />
                 </div>
                 <div>
@@ -104,6 +106,7 @@ function SignUp() {
                         onChange={changeEventHandler}
                         placeholder="99999999999"
                         autoComplete="phoneNumber"
+                        required
                     />
                 </div>
                 <div>
@@ -115,6 +118,7 @@ function SignUp() {
                         onChange={changeEventHandler}
                         placeholder="abc@123"
                         autoComplete="password"
+                        required
                     />
                 </div>
                 <div className="my-2">
@@ -128,6 +132,7 @@ function SignUp() {
                                 checked={input.role === 'student'}
                                 onChange={changeEventHandler}
                                 className="cursor-pointer"
+                                
                             />
                             <Label>Student</Label>
                         </div>
@@ -150,6 +155,7 @@ function SignUp() {
                             type="file"
                             onChange={changeFileHandler}
                             className="cursor-pointer"
+                            required
                         />
                     </div>
                 </div>
