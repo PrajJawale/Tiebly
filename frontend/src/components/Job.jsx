@@ -29,7 +29,7 @@ function Job({ job }) {
             <div className='flex items-center gap-5 my-2'>
                 <Button className="p-6" variant="outline" size="icon">
                     <Avatar>
-                        <AvatarImage src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOo6QUm_jVtraBc_hltQIeZMq4m_Wv8uTFcg&s" />
+                        <AvatarImage src={job?.company.logo} />
                     </Avatar>
                 </Button>
                 <div>
